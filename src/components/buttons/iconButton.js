@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const IconButton = (props) => {
-    const {color,w, h, action, s, icon} = props
+  const {color,w, h, action, s, icon} = props
     const classes = useStyles();
     return (<button 
     className={classes.mbtn} 

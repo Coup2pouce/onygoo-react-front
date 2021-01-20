@@ -11,7 +11,7 @@ const CarCard2 = (props) => {
 
     const history = useHistory();
 
-    const {post} = props;
+    const {post, idProp} = props;
 
 
     const formatStars = (stars) => {
@@ -39,7 +39,8 @@ const CarCard2 = (props) => {
          history.push({
              pathname: DETAILS,
              state: {
-                 id: post.id
+                 id: post.id,
+                 proprietaireId: idProp
              }
          })    }}>
                 <img width="100%" height="280px" class="card-img-top" src={post.image} alt={post.name} />

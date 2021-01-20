@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const MainButton = (props) => {
-    const {color, title, w, h, action, s} = props
+    const {color, c, title, w, h, action, cl ,s} = props
     const classes = useStyles();
     return (<button 
     className={classes.mbtn} 
-    style={{backgroundColor: color, fontSize: `${s}px`, height:`${h}px`, width: "100%"}}
+    style={{backgroundColor: color ,class: `${cl}`, color: `${c}`, fontSize: `${s}px`, height:`${h}px`, width: `${w}`}}
     onClick={() => action()}>
       {title}
     </button>)

@@ -1,6 +1,7 @@
-import { Container } from "@material-ui/core";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import CarCard2 from "../../components/cards/carCard2";
+import FilterPanel from "../../components/searchBar/filterPanel";
+import SearchBar from "../../components/searchBar/searchar";
 
 const list = [
     {
@@ -10,7 +11,7 @@ const list = [
         location: "Dakar",
         year: "2002",
         type: "Automatique",
-        image: "/images/cars/car1.jpg",
+        image: "/images/cars/car4.jpg",
         stars: 3
     },
     {
@@ -21,7 +22,7 @@ const list = [
         location: "Dakar",
         year: "2000",
         type: "Automatique",
-        image: "/images/cars/car2.jpg",
+        image: "/images/cars/car5.jpg",
         stars: 5
     },
     {
@@ -32,7 +33,7 @@ const list = [
         location: "Dakar",
         year: "2011",
         type: "Automatique",
-        image: "/images/cars/car3.jpg",
+        image: "/images/cars/car6.jpg",
         stars: 2
     },
     {
@@ -43,7 +44,7 @@ const list = [
         location: "Dakar",
         year: "2011",
         type: "Automatique",
-        image: "/images/cars/car3.jpg",
+        image: "/images/cars/car8.jpg",
         stars: 2
     }
 ];
@@ -51,24 +52,26 @@ const list = [
 
 const ProductList = () => {
 
-    return <div  style={{margin: "8em 0 5em 0", width: "100%", padding:"0 1.5em"}}>
-        <Row>
-            <Col sm="4">
-
-            </Col>
-            <Col sm="8">
-                 <Row>
-                     {
-                         list.map((item) => <Col sm="6" className="mt-4">
-                             <CarCard2 post={item} />
-                         </Col> )
-                     }
-                     
-                    
-                 </Row>
-            </Col>
-        </Row>
-    </div>
+    return <Container fluid  style={{margin: "8em 0 5em 0", width: "100%", padding:"0 1.5em"}}>
+               <SearchBar />
+               <Container fluid className="text-muted pt-4" style={{height: "40px"}}>
+                  <span>Résultats 1 - 20</span>
+               </Container>
+                <Row>
+                    <Col sm="4">
+                      <FilterPanel />
+                    </Col>
+                    <Col sm="8">
+                        <Row>
+                            {
+                                list.map((item) => <Col sm="6" className="mt-4">
+                                    <CarCard2 post={item} />
+                                </Col> )
+                            }
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
 }
 
 

@@ -16,7 +16,6 @@ const Home = () =>  {
        <MainInfo />
        <Discover />
        <Download />
-       <Footer />
     </div>
   );
 }

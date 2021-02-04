@@ -1,27 +1,37 @@
 import './App.css';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { DETAILS, HOME, PRODUCTLIST } from './constants/routes';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {  COVOITURAGEDETAILS, COVOITURAGELIST, HOME, INSCRIREVOITURE, LOCATIONDETAILS, LOCATIONLIST } from './constants/routes';
 import Home from './pages/home/index';
 import { Container } from 'react-bootstrap';
 import MainNavbar from './components/navbar/index';
-import ProductList from './pages/productList';
 import Footer from './components/footer';
-import Details from './pages/details';
+import { Provider } from "react-redux";
+import store from "./redux/store/index";
+import LocationListe from './pages/locationVoitureListe';
+import LocationDetails from './pages/locationVoitureDetail';
+import CovoiturageListe from './pages/covoiturageVoitureListe';
+import CovoiturageDetails from './pages/covoiturageVoitureDetail';
+import InscrireVoiture from './pages/inscrireVoiture';
 
 function App() {
   return (
-    <Container fluid className="p-0">
-      <MainNavbar />
-      <Router>
-        <Switch>
-          <Route exact path={HOME} component={Home} />
-          <Route exact path={PRODUCTLIST} component={ProductList} />
-          <Route exact path={DETAILS}  component={Details} />
-        </Switch>
-      </Router>
-      <Footer />
-
+    <Router>
+    <Provider store={store}>
+      <Container fluid className="p-0">
+        <MainNavbar/>
+          <Switch>
+            <Route exact path={HOME} component={Home} />
+            <Route exact path={LOCATIONLIST} component={LocationListe} />
+            <Route exact path={LOCATIONDETAILS}  component={LocationDetails} />
+            <Route exact path={COVOITURAGELIST}  component={CovoiturageListe} />
+            <Route exact path={COVOITURAGEDETAILS}  component={CovoiturageDetails} />
+            <Route exact path={INSCRIREVOITURE}  component={InscrireVoiture} />
+          </Switch>
+        <Footer />
     </Container>
+    </Provider>
+    </Router>
+    
   );
 }
 

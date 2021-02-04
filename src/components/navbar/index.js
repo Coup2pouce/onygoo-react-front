@@ -3,16 +3,24 @@ import { SearchOutlined } from "@material-ui/icons";
 import { Nav, Navbar, Image } from "react-bootstrap";
 import MainButton from "../buttons/mainButton";
 import { mainBlue } from '../../constants/colors';
+import { useHistory } from "react-router-dom";
+import { HOME } from "../../constants/routes";
 
 
-const MainNavbar = () => {
+const MainNavbar = (props) => {
+
+    const history = useHistory();
 
     const onRegister = () => {
         console.log('ok from register')
     }
+
+    const backHome = () => {
+        history.push(HOME);
+    }
     return (
         <Navbar bg="light" expand="lg" fixed="top" style={{fontSize:"12px", padding:"0 5em"}}>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand onClick={backHome}>
                 <Image src="/images/logo.png" height="50px" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

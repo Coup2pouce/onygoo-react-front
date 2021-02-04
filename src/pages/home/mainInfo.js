@@ -8,8 +8,8 @@ const useStyle = makeStyles((theme) => ({
    pbtn:{
 
     position: "absolute",
-    width: "55px",
-    height: "55px",
+    width: "85px",
+    height: "85px",
     border: "2px solid #ffffff",
     borderRadius: "50%",
     top: "45%",
@@ -37,14 +37,14 @@ const MainInfo = () =>  {
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     width: "100%",
-                    height: "390px"
+                    height: "520px"
                     }} >
                  <div className={classes.pbtn}>
-                    <PlayArrowOutlined style={{fontSize: "52px"}}/>
+                    <PlayArrowOutlined style={{fontSize: "82px"}}/>
                  </div>
                 </div>
             </Col>
-            <Col md={6} style={{color: darkBlue, marginTop: isMobile ? ".5em" : "0"}}>
+            <Col md={6} style={{color: darkBlue, marginTop: isMobile ? ".5em" : "0"}} className="py-5">
                 <h2 className="ml-5 mb-3" style={{fontWeight: "bold", fontSize: "26px"}}>
                     Vous avez un voiture ? <br/>
                     Rentabilssez-la sur OnyGoo !
@@ -56,7 +56,7 @@ const MainInfo = () =>  {
                     la confiance régne, en assurant les services et en veillant à leur <br/>
                     bon déroulement.
                 </p>
-                <ul className="p-0 my-3" style={{listStyle: "none", fontSize: isMobile ? "16px" :"22px"}}>
+                <ul className="p-0 my-3" style={{listStyle: "none", fontSize: isMobile ? "16px" :"26px"}}>
                     <li className="mb-2">
                         <span className="mr-4"><Image src="/images/arrow.png" width="20px" height="20px" /></span>
                         <span style={{ fontWeight: "bold"}}>Louez pour une heure ou plusieurs jours</span>
@@ -71,7 +71,7 @@ const MainInfo = () =>  {
                     </li>
 
                 </ul>
-                <Button className="ml-5 mt-2" style={{backgroundColor: "#ffffff", color: darkBlue, border:`1px solid ${darkBlue}`, fontSize: "18px"}}>
+                <Button className="ml-5 mt-4 py-3 px-4" style={{backgroundColor: "#ffffff", color: darkBlue, border:`1px solid ${darkBlue}`, fontSize: "18px"}}>
                    Voir comment ça marche
                 </Button>
             </Col>

@@ -1,37 +1,19 @@
 import { Button, Divider } from '@material-ui/core';
 import { ButtonGroup, Col, Form, Row } from 'react-bootstrap'
+import CustomRangelider from '../slider/customRangeSlider';
 import './style.css'
-const  FilterPanel = (props) => {
+const  CovoiturageFilterPanel = (props) => {
 
     return (<div className="filter-panel p-5">
         <Row className="mt-5">
             <Col className="text-left">
-                <p className="font-weight-bold " style={{fontSize: '22px', color: "#147EE9", marginTop:'-3em'}}>Type de voiture</p>
+                <p className="font-weight-bold " style={{fontSize: '22px', color: "#147EE9", marginTop:'-3em'}}>Rayon</p>
+                <CustomRangelider />
             </Col>
         </Row>
 
         <Row>
-            <Col xs="5" className="border pt-2 ">
-                <img src="images/icons/citadine.jpeg" width="100%" />
-                <p className="text-center" style={{marginBottom:"0"}}>Citadine</p>
-            </Col>
-            <Col xs="1"></Col>
-            <Col xs="5" className="border pt-2" >
-                <img src="images/icons/berline.jpeg" width="100%" />
-                <p className="text-center" style={{marginBottom:"0"}}>Berline</p>
-            </Col>
-            <Col xs="1"></Col>
-
-            <Col xs="5" className="border mt-4 pt-2">
-                <img src="images/icons/familiale.jpeg" width="100%" />
-                <p className="text-center" style={{marginBottom:"0"}}>Familiale</p>
-            </Col>
-            <Col xs="1"></Col>
-
-            <Col xs="5" className="border mt-4 pt-2">
-                <img src="images/icons/utilitaire.jpeg" width="100%" />
-                <p className="text-center" style={{marginBottom:"0"}}>Utilitaire</p>
-            </Col>
+            
         </Row>
 
         <Row className="mt-5">
@@ -88,4 +70,4 @@ const  FilterPanel = (props) => {
     </div>)
 }
 
-export default FilterPanel;
+export default CovoiturageFilterPanel;

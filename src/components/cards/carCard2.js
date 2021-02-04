@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
-import { DETAILS } from "../../constants/routes";
-import { Avatar } from 'primereact/avatar';
+import { DETAILS, LOCATIONDETAILS } from "../../constants/routes";
+//import { Avatar } from 'primereact/avatar';
 import { Star } from "@material-ui/icons";
 import { mainBlue } from "../../constants/colors";
 import { Image } from "react-bootstrap";
@@ -37,7 +37,7 @@ const CarCard2 = (props) => {
 
     return (<div className="card" style={{width: "100%", cursor: "pointer"}} onClick={()=> {
          history.push({
-             pathname: DETAILS,
+             pathname: LOCATIONDETAILS,
              state: {
                  id: post.id,
                  proprietaireId: idProp

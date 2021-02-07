@@ -7,5 +7,7 @@ export const cielBlue = "#E6F4F4";
 export const departBlue= "#0FA8EB";
 export const  colorBottongreen = "#F4F3F2";
 export const colorBottonReserver = "#314865";
+export const colorPink = "#FF0078";
+export const colorGray = "#F4F9F9";
 
 

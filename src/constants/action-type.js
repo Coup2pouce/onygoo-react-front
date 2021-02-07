@@ -1,0 +1,1 @@
+export const TOGGLE_APP = "TOGGLE_APP";

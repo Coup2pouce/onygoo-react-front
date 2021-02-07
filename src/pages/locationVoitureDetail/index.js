@@ -1,12 +1,12 @@
 
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import MainButton from "../../components/buttons/mainButton";
 import { colorBottongreen, colorBottonReserver, mainBlue } from "../../constants/colors";
 import FormDetails from "./formDetails";
-import { Icon } from "@material-ui/core";
 import InfoVoiture from "./infoVoiture";
 import { Star } from "@material-ui/icons";
+import LocationDetailGallery from "../../components/gallery/LocationDetailsGallery";
 
 
 const list = [
@@ -18,6 +18,11 @@ const list = [
         year: "2002",
         type: "Automatique",
         image: "/images/cars/car1.jpg",
+        gallery: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScvMr-yDE-63ndmi1InUfonQNcGcrsHg6LAw&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCwTulFoaiSOvd0zbXSKuNxNI-8VNqw2MnaA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiALcsCF3jXcHHsfqSF5exjMQUGFGe4jx7ng&usqp=CAU"
+        ],
         stars: 3,
         emplacement: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.932746561482!2d-17.455852386077222!3d14.716394289728765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172c7b80f1065%3A0xa5310f371915bdf5!2sS.I.C.A.P.%20Liberte%203%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1610804385921!5m2!1sfr!2ssn",
         userId: 1,
@@ -56,6 +61,11 @@ const list = [
         year: "2000",
         type: "Automatique",
         image: "/images/cars/car2.jpg",
+        gallery: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScvMr-yDE-63ndmi1InUfonQNcGcrsHg6LAw&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCwTulFoaiSOvd0zbXSKuNxNI-8VNqw2MnaA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiALcsCF3jXcHHsfqSF5exjMQUGFGe4jx7ng&usqp=CAU"
+        ],
         stars: 5,
         emplacement: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.932746561482!2d-17.455852386077222!3d14.716394289728765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172c7b80f1065%3A0xa5310f371915bdf5!2sS.I.C.A.P.%20Liberte%203%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1610804385921!5m2!1sfr!2ssn",
         userId: 2,
@@ -94,6 +104,11 @@ const list = [
         year: "2011",
         type: "Automatique",
         image: "/images/cars/car3.jpg",
+        gallery: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScvMr-yDE-63ndmi1InUfonQNcGcrsHg6LAw&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCwTulFoaiSOvd0zbXSKuNxNI-8VNqw2MnaA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiALcsCF3jXcHHsfqSF5exjMQUGFGe4jx7ng&usqp=CAU"
+        ],
         stars: 2,
         emplacement: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.932746561482!2d-17.455852386077222!3d14.716394289728765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172c7b80f1065%3A0xa5310f371915bdf5!2sS.I.C.A.P.%20Liberte%203%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1610804385921!5m2!1sfr!2ssn",
         userId: 1,
@@ -132,6 +147,11 @@ const list = [
         year: "2002",
         vitesse: "Automatique",
         image: "/images/cars/car1.jpg",
+        gallery: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScvMr-yDE-63ndmi1InUfonQNcGcrsHg6LAw&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCwTulFoaiSOvd0zbXSKuNxNI-8VNqw2MnaA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiALcsCF3jXcHHsfqSF5exjMQUGFGe4jx7ng&usqp=CAU"
+        ],
         stars: 3,
         emplacement: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.932746561482!2d-17.455852386077222!3d14.716394289728765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172c7b80f1065%3A0xa5310f371915bdf5!2sS.I.C.A.P.%20Liberte%203%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1610804385921!5m2!1sfr!2ssn",
         userId: 1,
@@ -165,7 +185,7 @@ const list = [
 ];
 
 
-const Details = (props) => {
+const LocationDetails = (props) => {
     const location = useLocation();
 
     const id = location.state.id;
@@ -197,11 +217,9 @@ const Details = (props) => {
 
 
     return (<div style={{ width: "100%" }}>
-        <Row >
-            <figure className="figure" style={{ height: "450px", width: "100%", overflow: "hidden" }}>
-                <img src={post.image} width="100%" class="img-fluid " max-height="auto" alt="Responsive image" />
-            </figure>
-        </Row>
+        <Container >
+            <LocationDetailGallery gallery={post.gallery} />
+        </Container>
         <Row style={{ margin: "5px 10px", width: "90%", padding: "15px" }}>
             <Col sm="8">
                 <div className="card" style={{ margin: "5px", width: "90%", padding: "5px" }} >
@@ -258,4 +276,4 @@ const Details = (props) => {
     )
 }
 
-export default Details;
+export default LocationDetails;

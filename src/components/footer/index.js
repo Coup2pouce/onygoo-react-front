@@ -4,11 +4,14 @@ import { darkBlue } from "../../constants/colors";
 
 const useStyle = makeStyles(() => ({
    root:{
-       position: "relative",
+       position: "absolute",
+       width: "100%",
        height: "280px",
        backgroundColor: darkBlue,
        padding: "2em 2.5em",
-       color: "#ffffff"
+       color: "#ffffff",
+       bottom: 0,
+       top: 2500
        
        
 

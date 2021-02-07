@@ -2,6 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import CarCard2 from "../../components/cards/carCard2";
 import FilterPanel from "../../components/searchBar/filterPanel";
 import SearchBar from "../../components/searchBar/searchar";
+import { Paginator } from 'primereact/paginator';
+import { useState } from "react";
 
 
 
@@ -132,8 +134,16 @@ const Proprietaire = [
     },
 ]
 
-const ProductList = () => {
+const LocationListe = () => {
+    const [first, setFirst] = useState(0);
+    const [rows, setRows] = useState(10);
 
+    const onPageChange = (event) => {
+        setFirst(event.first);
+        setRows(event.rows);
+    }
+
+   
     return <Container fluid  style={{margin: "8em 0 5em 0", width: "100%", padding:"0 1.5em"}}>
         <SearchBar />
         <Container fluid className="text-muted pt-4" style={{height: "40px"}}>
@@ -144,13 +154,16 @@ const ProductList = () => {
                 <FilterPanel />
             </Col>
             <Col sm="8">
-                <Row>
+                <Row className="mb-5">
                     {
                         list.map((item) => <Col sm="6" className="mt-4">
                             <CarCard2 post={item} idProp={Proprietaire[0].id} />
                         </Col> )
                     }
                 </Row>
+
+                <Paginator first={first} rows={rows} totalRecords={120} rowsPerPageOptions={[10, 20, 30]} onPageChange={onPageChange}></Paginator>
+
             </Col>
         </Row>
     </Container>
@@ -160,4 +173,4 @@ const ProductList = () => {
 
       
 
-export default ProductList;
+export default LocationListe;

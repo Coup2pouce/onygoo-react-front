@@ -4,7 +4,7 @@ import { Nav, Navbar, Image } from "react-bootstrap";
 import MainButton from "../buttons/mainButton";
 import { mainBlue } from '../../constants/colors';
 import { useHistory } from "react-router-dom";
-import { HOME } from "../../constants/routes";
+import { HOME, INSCRIREVOITURE } from "../../constants/routes";
 
 
 const MainNavbar = (props) => {
@@ -12,7 +12,7 @@ const MainNavbar = (props) => {
     const history = useHistory();
 
     const onRegister = () => {
-        console.log('ok from register')
+        history.push(INSCRIREVOITURE);
     }
 
     const backHome = () => {

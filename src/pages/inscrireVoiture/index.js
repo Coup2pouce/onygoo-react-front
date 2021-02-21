@@ -1,49 +1,40 @@
-import { Container, Row, Col, Form, Image } from "react-bootstrap";
-import MainButton from "../../components/buttons/mainButton";
-import {  colorGray, colorPink, mainBlue } from "../../constants/colors";
+import { Container} from "react-bootstrap";
+import { connect } from "react-redux";
+import Step1 from "../../components/formsteps/step1";
+import StepForm1 from "../../components/formsteps/stepform1";
+import StepForm2 from "../../components/formsteps/stepForm2";
+import StepForm3 from "../../components/formsteps/stepForm3";
+import StepForm4 from "../../components/formsteps/stepForm4";
 
-const InscrireVoiture = () => {
+import { useLocalStorage } from "../../helpers/hooks";
+import store from "../../redux/store";
 
-    return <Container fluid style={{backgroundColor: colorGray, marginTop: "5em", width: "100%", height: "100vh"}} className="p-5">
-        <Row>
-            <Col>
-               <h1 style={{color: mainBlue}}>Complétez vos revenus en <br/> Partageant votre voiture</h1>
-              <div  className="py-5"/>
-               <Row>
-                    <Col>
-                        <Form.Control placeholder="Volkswagen"  style={{height: "48px"}}/>
-                    </Col>
-                    <Col>
-                        <Form.Control placeholder="Golf"  style={{height: "48px"}}/>
-                    </Col>
-               </Row>
-              <div className="mt-4" />
-               <Row>
-                    <Col>
-                        <Form.Control placeholder="2018" style={{height: "48px"}} />
-                    </Col>
-                    <Col>
-                        <Form.Control placeholder="100-150 000 km" style={{height: "48px"}} />
-                    </Col>
-               </Row>
-               <div className="mt-4" />
-               <Row>
-                    <Col>
-                        <Form.Control placeholder="Indiquez votre ville" style={{height: "48px"}} />
-                    </Col>
-                    <Col></Col>
-               </Row>
-              <div className="text-center mt-5">
-              <MainButton title="commencer" color={colorPink} w="250px" fontsize="bold" />
+const ConnectedInscrireVoiture = (props) => {
 
-              </div>
-            </Col>
-            <Col>
-            <Image src="https://cdn.pixabay.com/photo/2014/04/02/16/22/bus-307098__340.png"  width="100%" />
-            </Col>
-        </Row>
+    const [step, setStep] = useLocalStorage('step', '1');
+
+    store.subscribe(() =>{
+       setStep(store.getState().formStep)
+    })
+
+    return <Container fluid style={{backgroundColor: "#F2F2F2F2", marginTop: "2em", width: "100%"}} className="p-5">
+       {step == 1 ? <Step1 /> : ''} 
+       {step == 2 ? <StepForm1 /> : ''} 
+       {step == 3 ? <StepForm2 /> : ''} 
+       {step == 4 ? <StepForm3 /> : ''} 
+       {step == 5 ? <StepForm4 /> : ''} 
+
     </Container>
 
 }
 
+
+
+const mapStateToProps = state => {
+    return { formStep: state.formStep };
+  };
+
+const InscrireVoiture  = connect(mapStateToProps)(ConnectedInscrireVoiture);
+
 export default InscrireVoiture;
+

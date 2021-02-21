@@ -1,10 +1,10 @@
 import { useHistory } from "react-router-dom";
-import { DETAILS, LOCATIONDETAILS } from "../../constants/routes";
+import { COVOITURAGEDETAILS  } from "../../constants/routes";
 //import { Avatar } from 'primereact/avatar';
 import { Star } from "@material-ui/icons";
 import { colorPink, darkBlue, mainBlue } from "../../constants/colors";
 import { Col, Image, Row } from "react-bootstrap";
-import { Avatar } from "@material-ui/core";
+
 
 
 
@@ -38,7 +38,7 @@ const CovoitureListCard = (props) => {
 
     return (<div className="card card-body" style={{width: "100%", cursor: "pointer"}} onClick={()=> {
          history.push({
-             pathname: LOCATIONDETAILS,
+             pathname: COVOITURAGEDETAILS,
              state: {
                  id: post.id,
                  proprietaireId: idProp

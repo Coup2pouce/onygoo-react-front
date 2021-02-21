@@ -49,10 +49,7 @@ const  CovoiturageFilterPanel = (props) => {
             <Col className="text-left">
                 <p className="font-weight-bold " style={{fontSize: '18px', color: "#313E73"}}>Prix total</p>
                 <p className="text-center text-muted">Tous les prix</p>
-
-                <Form.Group controlId="formBasicRange">
-                    <Form.Control type="range" style={{color:"#313E73 !important"}} />
-                </Form.Group>
+                <CustomRangelider />
             </Col>
         </Row>
 

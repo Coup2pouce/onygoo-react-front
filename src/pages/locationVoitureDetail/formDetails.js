@@ -1,12 +1,12 @@
 
 import MainButton from "../../components/buttons/mainButton";
-import {  colorBottonReserver, cielBlue } from "../../constants/colors";
+import { colorBottonReserver, cielBlue } from "../../constants/colors";
 
 const FormDetails = (props) => {
 
     return (
         <div className="card fluid" style={{ margin: "5px", backgroundColor: cielBlue, height: "495px" }}>
-            <form style={{padding: "10px"}} >
+            <form style={{ padding: "10px" }} >
                 <label class="text-primary"><strong> Depart</strong></label>
                 <div class="form-row">
                     <div class="col">
@@ -26,10 +26,10 @@ const FormDetails = (props) => {
                         <input type="time" class="form-control" ></input>
                     </div>
                 </div >
-              
+
                 <div class="row">
-                        <p class="col  small text-secondary">Période: 1 jour</p>
-                        <p class="col text-right" style={{ color: colorBottonReserver }}><strong> 2500 fcfa</strong></p>
+                    <p class="col  small text-secondary">Période: 1 jour</p>
+                    <p class="col text-right" style={{ color: colorBottonReserver }}><strong> 2500 fcfa</strong></p>
                 </div>
                 <hr></hr>
                 <div class="row">
@@ -46,7 +46,7 @@ const FormDetails = (props) => {
                     <p class="col small text-secondary" style={{ color: colorBottonReserver }}> <strong> Prix total</strong></p>
                     <p class="col text-right" style={{ color: colorBottonReserver }}><strong> 0 fcfa</strong></p>
                 </div>
-                <MainButton title=" Reserver" w={"95%"} cl={"text-white"} color={colorBottonReserver} h={40} />
+                <MainButton title=" Reserver"  s={12}color={colorBottonReserver} h={40} />
             </form>
         </div>
     )

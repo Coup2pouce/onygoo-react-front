@@ -19,7 +19,7 @@ const MainNavbar = (props) => {
         history.push(HOME);
     }
     return (
-        <Navbar bg="light" expand="lg" fixed="top" style={{fontSize:"12px", padding:"0 5em"}}>
+        <Navbar bg="" expand="lg" fixed="top" style={{fontSize:"12px", padding:"0 5em", backgroundColor: "#F6F5F7"}}>
             <Navbar.Brand onClick={backHome}>
                 <Image src="/images/logo.png" height="50px" />
             </Navbar.Brand>

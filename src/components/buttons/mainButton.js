@@ -22,7 +22,7 @@ const MainButton = (props) => {
     const classes = useStyles();
     return (<button 
     className={classes.mbtn} 
-    style={{backgroundColor: color ,class: `${cl}`, color: c, fontSize: `${s}px`, height:`${h}px`, width: `${w}`, fontWeight: `${fontsize}`}}
+    style={{backgroundColor: color ,class: `${cl}`, color: c, fontSize: `${s}px`, height:`${h}px`, width: `${w}%`, fontWeight: `${fontsize}`}}
     onClick={() => action()}>
       {title}
     </button>)

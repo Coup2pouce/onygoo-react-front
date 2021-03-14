@@ -2,11 +2,12 @@
 import { Row, Col, Container } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import MainButton from "../../components/buttons/mainButton";
-import { colorBottongreen, colorBottonReserver, mainBlue } from "../../constants/colors";
+import { colorBottongreen, colorBottonReserver, mainBlue, textBlue } from "../../constants/colors";
 import FormDetails from "./formDetails";
 import InfoVoiture from "./infoVoiture";
 import { Star } from "@material-ui/icons";
 import LocationDetailGallery from "../../components/gallery/LocationDetailsGallery";
+import Evaluation from "./evaluation";
 
 
 const list = [
@@ -36,7 +37,7 @@ const list = [
         entretientVehicucle: "Mon véhicule est bien entretenu",
         controleTechnique: "Mon vehicule dispose d'un contrôle technique à jour",
         conditionsRequises: " - Respecter l'état intérieur du véhicule: il est à rendre aussi propre qu'au début de  la location (Jusqu'à 5000f caf de pénalite pour la saleté)  -Nos véhicule sont nom-fumeur (35000 F CFA de pénalité pour non respect) ",
-        user:{
+        user: {
             id: 1,
             nom: "yade",
             prenom: "Mansour ",
@@ -122,7 +123,7 @@ const list = [
         entretientVehicucle: "Mon véhicule est bien entretenu",
         controleTechnique: "Mon vehicule dispose d'un contrôle technique à jour",
         conditionsRequises: " - Respecter l'état intérieur du véhicule: il est à rendre aussi propre qu'au début de  la location (Jusqu'à 5000f caf de pénalite pour la saleté)  -Nos véhicule sont nom-fumeur (35000 F CFA de pénalité pour non respect) ",
-        user:{
+        user: {
             id: 2,
             nom: "Senghor",
             prenom: "Babacar ",
@@ -194,79 +195,86 @@ const LocationDetails = (props) => {
         const starList = [];
         const off = 5 - stars;
 
-          [...Array(stars).keys()].forEach((item) =>{
-          
-              starList.push(<Star style={{color: mainBlue}} />)
-          
-          });
+        [...Array(stars).keys()].forEach((item) => {
 
-          [...Array(off).keys()].forEach((item) =>{
-          
+            starList.push(<Star style={{ color: mainBlue, fontSize: "small"}} />)
+
+        });
+
+        [...Array(off).keys()].forEach((item) => {
+
             starList.push(<Star className="text-muted" />)
-        
+
         })
-          
-      
+
+
 
         return starList;
-      }
+    }
 
 
 
     const post = list.find((item) => item.id === id);
 
 
-    return (<div style={{ width: "100%" }}>
+    return (<div>
         <Container >
             <LocationDetailGallery gallery={post.gallery} />
         </Container>
-        <Row style={{ margin: "5px 10px", width: "90%", padding: "15px" }}>
+        <Row style={{ margin: "5px 10px", padding: "15px" }}>
             <Col sm="8">
-                <div className="card" style={{ margin: "5px", width: "90%", padding: "5px" }} >
-                    <h6 class="small" style={{ color: colorBottonReserver }}><strong>user</strong> </h6>
-                    <Row>
-                        <Col sm="3" height="20px" width="100%" >
-                            <span>
-                                <img width="80%" height="auto" class="rounded-circle" src={post.user.imageProfil} ></img>
-                            </span>
-                        </Col>
-                        <Col sm="9" >
-                            <div class="container">
-                                <p class="small text-secondary"><strong>{post.user.prenom} {post.user.nom}</strong></p>
-                                <p class="small text-secondary">{post.user.statusTel}</p>
-                                <p class="small text-secondary">{post.user.dateInscription}</p>
-                                <p>{formatStars(post.stars).map((star) => star)}</p>
-                            </div>
-                        </Col>
-                    </Row>
+                <div style={{ width: "95%" }}>
+                    <div className="card" style={{ margin: "5px", padding: "5px" }} >
+                        <h6 class="small" style={{ color: textBlue }}><strong>PROPRIÉTAIRE</strong> </h6>
+                        <Row>
+                            <Col sm="2" height="30px" width="30px" style={{paddingRight: "0"}} >
+                                <span >
+                                    <img width="90%" height="auto" class="rounded-circle" src={post.user.imageProfil} ></img>
+                                </span>
+                            </Col>
+                            <Col sm="10"   style={{paddingLeft: "0"}}g>
+                                <div class="container"  style={{paddingLeft: "0"}}>
+                                    <p style={{margin : "0"}} class="small text-secondary"><strong>{post.user.prenom} {post.user.nom}</strong></p>
+                                    <p style={{margin : "0"}} class="small text-secondary">{post.user.statusTel}</p>
+                                    <p style={{margin : "0"}} class="small text-secondary">Membre depuis {post.user.dateInscription}</p>
+                                    <p style={{margin : "0"}}>{formatStars(post.stars).map((star) => star)}</p>
+                                </div>
+                            </Col>
+                        </Row>
 
-                </div>
-
-                <div class="container" style={{ width: "100%", padding: "0px 50px 0px 0px" }}>
-                    <p class="small " style={{ color: colorBottonReserver }}><strong> {post.name}, {post.Carburant}, à {post.location}</strong> <br></br> </p>
-                    <p class="small text-secondary ">{post.user.descriptionPoste} </p>
-                    <div style={{ width: "15em", class: "rounded" }}>
-                        <MainButton color={colorBottongreen} cl={"small"} c={colorBottonReserver} title="Enoyer un message" h={35} />
                     </div>
+
+                    <div class="container" style={{ padding: "0px 50px 0px 0px" }}>
+                        <p class="small " style={{ color: textBlue }}><strong> {post.name}, {post.Carburant}, à {post.location}</strong> <br></br> </p>
+                        <p class="small text-secondary ">{post.user.descriptionPoste} </p>
+                    </div>
+
+                    <div>
+                    <MainButton s={18}  c={textBlue} color={colorBottongreen} title="Enoyer un message" h={40} />              
+                    </div>
+                    <br></br>
+
+                    < InfoVoiture />
+                    <br></br>
+
+                    <h6 class="small" style={{ color: textBlue }}><strong>EMPLACMENT DE LA VOITURE</strong> <br></br></h6>
+                    <p class="small  text-secondary">Vous recevrez l adresse précise et des indications sur le lieu de prise en charge de la voiture
+                    aprés confirmation de la réservation."</p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item"
+                            src={post.emplacement}
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div className="card" style={{ marginTop: "15px", paddingTop: "10px", paddingLeft: "10px", width: "100%" }}>
+                        <h6 class="small"  style={{ color: textBlue }}><strong>CONDITIONS REQUISES PAR LE PROPRIÉTAIRE</strong> </h6>
+                        <p class="small text-secondary"> {post.conditionsRequises}</p>
+                        <p class="small text-primary" style={{ cursor: "pointer" }}>En savoir plus</p>
+                    </div>
+                    <br></br>
+                    <Evaluation />  
                 </div>
-            
-                < InfoVoiture />
-                
-                <p class="small" style={{ color: colorBottonReserver }}><strong>EMPLACMENT DE LA VOITURE</strong> <br></br></p>
-                <p class="small  text-secondary">Vous recevrez l adresse précise et des indications sur le lieu de prise en charge de la voiture
-                aprés confirmation de la réservation."
-                </p>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item"
-                        src={post.emplacement}
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div className="card" style={{ marginTop: "15px", paddingTop: "10px", paddingLeft: "10px", width: "100%" }}>
-                    <h6 class="small" style={{ color: colorBottonReserver }}><strong>CONDITIONS REQUISES PAR LE user</strong> </h6>
-                    <p class="small text-secondary"> {post.conditionsRequises}</p>
-                    <p class="small text-primary" style={{ cursor: "pointer" }}>En savoir plus</p>
-                </div>
+               
             </Col>
             <Col sm="4">
                 <FormDetails />

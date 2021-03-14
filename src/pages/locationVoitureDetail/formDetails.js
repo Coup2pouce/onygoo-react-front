@@ -1,11 +1,11 @@
 
 import MainButton from "../../components/buttons/mainButton";
-import { colorBottonReserver, cielBlue } from "../../constants/colors";
+import { colorBottonReserver, cielBlue, colorCov } from "../../constants/colors";
 
 const FormDetails = (props) => {
 
     return (
-        <div className="card fluid" style={{ margin: "5px", backgroundColor: cielBlue, height: "495px" }}>
+        <div className="card fluid" style={{ margin: "5px", backgroundColor: cielBlue }}>
             <form style={{ padding: "10px" }} >
                 <label class="text-primary"><strong> Depart</strong></label>
                 <div class="form-row">
@@ -43,10 +43,10 @@ const FormDetails = (props) => {
                 </div>
                 <hr></hr>
                 <div class="row">
-                    <p class="col small text-secondary" style={{ color: colorBottonReserver }}> <strong> Prix total</strong></p>
-                    <p class="col text-right" style={{ color: colorBottonReserver }}><strong> 0 fcfa</strong></p>
-                </div>
-                <MainButton title=" Reserver"  s={12}color={colorBottonReserver} h={40} />
+                    <p class="col col col-md-8 small text-secondary" style={{ color: colorBottonReserver }}> <strong> Prix total</strong></p>
+                    <p class="col col col-md-4 text-right" style={{ color: colorBottonReserver }}><strong> 0 fcfa</strong></p>
+                </div> <br></br>    
+                <MainButton s={18} color={colorBottonReserver} title=" Réserver " w={100}/>  
             </form>
         </div>
     )

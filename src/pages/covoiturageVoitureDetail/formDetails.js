@@ -66,7 +66,7 @@ const FormDetails = (props) => {
                 <p><strong>Facile</strong> <br></br>
                     Recevez des notifications par sms, email, <br></br> Ou appli.</p>
                 <p><strong>En toute sécurité</strong><br></br>
-                Consulter les évalusations  et les  <br></br>Recommandations avant de reserver</p>
+                Consulter les évaluations  et les  <br></br>Recommandations avant de reserver</p>
                 <p><strong>Pas de frais</strong><br></br>
                 Réserver votre trajet en ligne <br></br>Sans payer de frais de service.</p>
             </div>
